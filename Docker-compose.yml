@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  websocket:
+    build:
+      context: ./websocket
+      dockerfile: Dockerfile
+    environment:
+      - WEBSOCKET_URL=wss://rpc-testnet.nimiqcloud.com/ws
+
+  rpc:
+    build:
+      context: ./rpc
+      dockerfile: Dockerfile
+    environment:
+      - RPC_URL=https://rpc-testnet.nimiqcloud.com
